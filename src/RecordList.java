@@ -15,7 +15,7 @@ public class RecordList {
                 records.get(i).treatment = treatment;
                 records.get(i).notes = notes;
                 records.get(i).petId = petId;
-                System.out.println("Cập nhật thông tin thành công cho hồ sơ ID: " + recordId);
+                System.out.println("Cap nhap thong tin thanh cong cho ho so ID: " + recordId);
             }
         }
         return records;
@@ -25,7 +25,7 @@ public class RecordList {
         for (int i = 0; i < records.size(); i++) {
             if (records.get(i).recordId == recordId) {
                 records.remove(i);
-                System.out.println("Đã xóa hồ sơ với ID: " + recordId);
+                System.out.println("Da xoa ho so voi ID: " + recordId);
             }
         }
         return records;
@@ -33,7 +33,7 @@ public class RecordList {
 
     public void printRecordList() {
         if (records.isEmpty()) {
-            System.out.println("Danh sách hồ sơ trống.");
+            System.out.println("Danh sach ho so trong.");
         } else {
             for (Record record : records) {
                 System.out.println("Record ID: " + record.recordId +
