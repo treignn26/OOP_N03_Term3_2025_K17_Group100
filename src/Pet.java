@@ -1,6 +1,10 @@
 package models;
 
+<<<<<<< HEAD:src/pets.java
 public class Pets {
+=======
+public class Pet{
+>>>>>>> refs/remotes/origin/main:src/Pet.java
     private int id;
     private String name;
     private String species;
@@ -21,7 +25,7 @@ public class Pets {
         this.age = age;
     }
 
-    @Override
+    
     public String toString() {
         return "Pets{" +
                 "id=" + id +
