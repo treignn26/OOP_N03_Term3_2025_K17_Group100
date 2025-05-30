@@ -68,7 +68,7 @@ public class Cleanser {
     // Dưới đây là các phương thức từ bài trước đã điều chỉnh
     // ----------------------------
 
-    ppublic void hienThiLichKhamTrongNgay(LocalDate ngayHienTai, List<Record> danhSachHoSo) {
+   public void hienThiLichKhamTrongNgay(LocalDate ngayHienTai) {
     System.out.println("Lich kham ngay " + ngayHienTai + ":");
     boolean coLich = false;
     for (Record hoSo : danhSachHoSo) {
@@ -81,6 +81,7 @@ public class Cleanser {
         System.out.println("Khong co thu cung nao co lịch kham trong ngay.");
     }
 }
+
 
 
    public void capNhatTinhTrangSucKhoe(LocalDate ngayHienTai, List<Record> danhSachHoSo) {
