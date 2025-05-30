@@ -1,5 +1,5 @@
 public void hienThiLichKhamTrongNgay(LocalDate ngayHienTai, List<Record> danhSachHoSo) {
-    System.out.println("Lịch khám ngày " + ngayHienTai + ":");
+    System.out.println("Lich kham ngay " + ngayHienTai + ":");
     boolean coLich = false;
     for (Record hoSo : danhSachHoSo) {
         if (hoSo.getDate().equals(ngayHienTai)) {
@@ -8,6 +8,6 @@ public void hienThiLichKhamTrongNgay(LocalDate ngayHienTai, List<Record> danhSac
         }
     }
     if (!coLich) {
-        System.out.println("Không có thú cưng nào có lịch khám trong ngày.");
+        System.out.println("Khong co thu cung nao co lịch kham trong ngay.");
     }
 }
