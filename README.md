@@ -43,11 +43,10 @@
 
 
 ## Sơ đồ Class Diagram:
-
+<img src="images/sodoclassdiagram.jpg" alt="Sơ đồ Class Diagram" width="500"/>
 # Sơ đồ hành vi
-
+<img src="images/sodohanhvi.jpg" alt="Sơ đồ hành vi" width="500"/>
 ## Activity Diagram
-
 
 # Công nghệ sử dụng:
     Ngôn ngữ: Java,
