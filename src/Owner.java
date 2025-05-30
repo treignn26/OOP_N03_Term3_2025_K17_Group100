@@ -34,7 +34,6 @@ public class Owner {
         return name;
     }
 
-    @Override
     public String toString() {
         return "Owner{" +
                 "name='" + name + '\'' +

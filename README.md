@@ -41,7 +41,7 @@
 
 -	Khi làm việc với dữ liệu trong bộ nhớ, dữ liệu cần được lưu trữ dưới dạng các Collection tùy chọn như ArrayList, LinkedList, Map,….
 
-# Sơ đồ cấu trúc
+
 ## Sơ đồ Class Diagram:
 
 # Sơ đồ hành vi
@@ -51,4 +51,7 @@
 
 # Công nghệ sử dụng:
     Ngôn ngữ: Java,
+
+
+
 
