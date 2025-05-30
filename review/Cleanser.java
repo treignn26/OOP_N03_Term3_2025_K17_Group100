@@ -15,7 +15,7 @@ public class Cleanser {
         do {
             System.out.println("\n=== PHONG KHAM THU CUNG  ===");
             System.out.println("1. Hien thi lich kham hom nay");
-            System.out.println("2. Cap nhap tinh trang thu cung");
+            System.out.println("2. Cap nhat tinh trang thu cung");
             System.out.println("3. In hoa don benh nhan");
             System.out.println("0. Thoat");
             System.out.print("Chon chuc nang: ");
@@ -56,7 +56,7 @@ public class Cleanser {
                     break;
 
                 default:
-                    System.out.println(" Lua chon khong hop le.");
+                    System.out.println("Lua chon khong hop le.");
             }
 
         } while (luaChon != 0);
@@ -64,87 +64,59 @@ public class Cleanser {
         scanner.close();
     }
 
-    // ----------------------------
-    // Dưới đây là các phương thức từ bài trước đã điều chỉnh
-    // ----------------------------
-
-   public void hienThiLichKhamTrongNgay(LocalDate ngayHienTai) {
-    System.out.println("Lich kham ngay " + ngayHienTai + ":");
-    boolean coLich = false;
-    for (Record hoSo : danhSachHoSo) {
-        if (hoSo.getDate().equals(ngayHienTai)) {
-            hoSo.display();
-            coLich = true;
+    public void hienThiLichKhamTrongNgay(LocalDate ngayHienTai) {
+        System.out.println("Lich kham ngay " + ngayHienTai + ":");
+        boolean coLich = false;
+        for (Record hoSo : danhSachHoSo) {
+            if (hoSo.getDate().equals(ngayHienTai)) {
+                hoSo.display();
+                coLich = true;
+            }
         }
-    }
-    if (!coLich) {
-        System.out.println("Khong co thu cung nao co lịch kham trong ngay.");
-    }
-}
-
-
-
-   public void capNhatTinhTrangSucKhoe(LocalDate ngayHienTai, List<Record> danhSachHoSo) {
-    System.out.println("Cap nhap tinh trang suc khoe co lich kham trong ngay " + ngayHienTai + ":");
-    boolean coLich = false;
-
-    for (Record hoSo : danhSachHoSo) {
-        if (hoSo.getDate().equals(ngayHienTai)) {
-            System.out.println("\nHo so thu cung:");
-            hoSo.display();
-
-            // Nhập dữ liệu cập nhật
-            Scanner scanner = new Scanner(System.in);
-            System.out.println("Nhap tinh trang suc khoe :");
-            hoSo.setTinhTrang(scanner.nextLine());
-
-            System.out.println("Nhap ghi chu y te:");
-            hoSo.setGhiChuYTe(scanner.nextLine());
-
-            System.out.println("Nhap ten thuoc (hoac de trong):");
-            String tenThuoc = scanner.nextLine();
-            if (!tenThuoc.isEmpty()) {
-                System.out.println("Nhap so luong thuoc:");
-                hoSo.setThuoc(tenThuoc, scanner.nextInt());
-                scanner.nextLine(); // Bỏ qua dòng mới
-            }
-
-            System.out.println("Nhap ngay tai kham (yyyy-MM-dd hoac de trong:");
-            String ngayTaiKham = scanner.nextLine();
-            if (!ngayTaiKham.isEmpty()) {
-                hoSo.setNgayTaiKham(LocalDate.parse(ngayTaiKham));
-            }
-
-            System.out.println("Da cap nhap ho so:");
-            hoSo.display();
-            coLich = true;
+        if (!coLich) {
+            System.out.println("Khong co thu cung nao co lịch kham trong ngay.");
         }
     }
 
-    public void inHoaDon(String tenThuCung, List<String> dichVu, List<Double> giaTien, List<Record> danhSachHoSo) {
-    for (Record hoSo : danhSachHoSo) {
-        if (hoSo.getPet().getName().equalsIgnoreCase(tenThuCung)) {
-            System.out.println("========== HOA DON ==========");
-            System.out.println("Thu cung: " + tenThuCung);
-            System.out.println("Chu nuoi: " + hoSo.getPet().getOwnerName());
-
-            double tongTien = 0;
-            for (int i = 0; i < dichVu.size(); i++) {
-                System.out.printf("- %s: %.0f VND\n", dichVu.get(i), giaTien.get(i));
-                tongTien += giaTien.get(i);
+    public void capNhatTinhTrang(String tenThuCung, String tinhTrang, String ghiChu, LocalDate ngayTaiKham) {
+        boolean found = false;
+        for (Record hoSo : danhSachHoSo) {
+            if (hoSo.getPet().getName().equalsIgnoreCase(tenThuCung)) {
+                hoSo.setTinhTrang(tinhTrang);
+                hoSo.setGhiChuYTe(ghiChu);
+                hoSo.setNgayTaiKham(ngayTaiKham);
+                System.out.println("Da cap nhat ho so:");
+                hoSo.display();
+                found = true;
+                break;
             }
-
-            System.out.printf("Tong cong: %.0f VND\n", tongTien);
-            System.out.println("=============================");
-            return;
+        }
+        if (!found) {
+            System.out.println("Khong tim thay thu cung co ten " + tenThuCung);
         }
     }
-    System.out.println("Khong tim thay thu cung co ten " + tenThuCung);
-}
 
-    // ----------------------------
-    // Dữ liệu mẫu để test
-    // ----------------------------
+    public void inHoaDon(String tenThuCung, List<String> dichVu, List<Double> giaTien) {
+        for (Record hoSo : danhSachHoSo) {
+            if (hoSo.getPet().getName().equalsIgnoreCase(tenThuCung)) {
+                System.out.println("========== HOA DON ==========");
+                System.out.println("Thu cung: " + tenThuCung);
+                System.out.println("Chu nuoi: " + hoSo.getPet().getOwnerName());
+
+                double tongTien = 0;
+                for (int i = 0; i < dichVu.size(); i++) {
+                    System.out.printf("- %s: %.0f VND\n", dichVu.get(i), giaTien.get(i));
+                    tongTien += giaTien.get(i);
+                }
+
+                System.out.printf("Tong cong: %.0f VND\n", tongTien);
+                System.out.println("=============================");
+                return;
+            }
+        }
+        System.out.println("Khong tim thay thu cung co ten " + tenThuCung);
+    }
+
     public void fakeData() {
         Pet p1 = new Pet("Milu", "Nguyen Van A");
         Pet p2 = new Pet("Tom", "Le Thi B");
