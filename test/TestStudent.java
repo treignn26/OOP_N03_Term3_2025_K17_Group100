@@ -1,3 +1,7 @@
+import java.util.Set;
+import java.util.TreeSet;
+import java.util.Iterator;
+
 public class TestStudent {
 public static void main(String[] args) {
 Student s1 = new Student("Fred", 3.0F);
@@ -13,6 +17,5 @@ studentSet.add(s1); studentSet.add(s2); studentSet.add(s3);
 Iterator i = studentSet.iterator();
 //method of Iterator hasNext()
 while(i.hasNext()) System.out.println( ((Student)i.next()).getName());
-
 }
 }
