@@ -56,9 +56,9 @@
 <img src="images/lưuđồ (2).png" alt="Lưu đồ thuật toán" width="500" >
 
 # Phân chia công việc:
-	Đào Thu Trang - 23010630 : Phát triển và hoàn thiện các lớp dữ liệu cần thiết.
-	Trần Thảo Vy - 23010588 :Xây dựng logic cốt lõi của việc lọc và hiển thị lịch hẹn.
+	Đào Thu Trang - 23010630 : Xây dựng logic cốt lõi của việc lọc và hiển thị lịch hẹn
+	Trần Thảo Vy - 23010588 :Phát triển và hoàn thiện các lớp dữ liệu cần thiết.
 	Nguyễn Ngọc Minh - 23010623: Kiểm thử tổng thể và tài liệu hóa.
 >>>>>>> refs/remotes/origin/main
 # Công nghệ sử dụng:
-    Ngôn ngữ: Java,
+    Ngôn ngữ: Java
