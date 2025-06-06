@@ -28,7 +28,7 @@ public class TestTrang {
             System.out.println("Khong co lich hen trong ngay hom nay.");
         } else {
             for (Appointment app : todayAppointments) {
-                Pet pet = petList.getPetDetails(app.getPetId()); // Lấy Pet từ PetList
+                Pet pet = petList.getPetDetails(app.getPetId()); 
                 if (pet != null) {
                     System.out.println("ID Lich Hen: " + app.getAppointmentId() +
                                        " | Pet: " + pet.getName() +
