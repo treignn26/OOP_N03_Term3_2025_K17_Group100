@@ -41,7 +41,7 @@
 
 -	Khi làm việc với dữ liệu trong bộ nhớ, dữ liệu cần được lưu trữ dưới dạng các Collection tùy chọn như ArrayList, LinkedList, Map,….
 
-<<<<<<< HEAD
+
 #Sơ đồ Class Diagram:
 <img src="img/#2.png" alt="Sơ đồ Class Diagram">
 #Sơ đồ Behavioural Diagram:
