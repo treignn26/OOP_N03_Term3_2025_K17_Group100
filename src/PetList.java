@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 
-
 class Pet {
   
     public int petId;
