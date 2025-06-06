@@ -57,8 +57,16 @@
 
 # Phân chia công việc:
 	Đào Thu Trang - 23010630 : Xây dựng logic cốt lõi của việc lọc và hiển thị lịch hẹn
+		- Miêu tả phương thức:
+			-Phương thức filterAppointmentsByDate trong AppointmentList sẽ lọc các lịch hẹn theo ngày.
+			- Tương tác: Phương thức này thể hiện mối quan hệ sử dụng (uses-a):
+				AppointmentList sử dụng các đối tượng Appointment để duyệt và lọc.
+			- Khi hiển thị thông tin lịch hẹn, AppointmentList (hoặc một lớp hiển thị) sẽ tương tác với PetList bằng cách gọi phương thức getPetDetails(petId) để lấy thông tin chi tiết của thú cưng tương ứng với petId trong lịch hẹn. Điều này cho phép kết hợp thông tin từ hai lớp dữ liệu khác nhau.
 	Trần Thảo Vy - 23010588 :Phát triển và hoàn thiện các lớp dữ liệu cần thiết.
+		- Class Pet đại diện cho thông tin một thú cưng (ID, tên, loài, tên chủ sở hữu).
+		- Class Appointment đại diện cho một lịch hẹn (ID lịch hẹn, ID thú cưng, ngày hẹn, lý do khám).
+		- Tương tác: Mặc dù Pet và Appointment là các lớp riêng biệt, chúng tương tác thông qua petId. Appointment chứa petId như một "khóa ngoại" để chỉ ra lịch hẹn này thuộc về thú cưng nào. Lớp PetList sẽ "chứa" các đối tượng Pet, thể hiện mối quan hệ tổng hợp (composition).
 	Nguyễn Ngọc Minh - 23010623: Kiểm thử tổng thể và tài liệu hóa.
->>>>>>> refs/remotes/origin/main
+		- Tương tác: Phương thức main() đóng vai trò là "điều phối viên", nó khởi tạo các đối tượng PetList và AppointmentList, sau đó gọi các phương thức của chúng để thực hiện các tác vụ (thêm dữ liệu, lấy ngày hiện tại, lọc lịch hẹn). Cuối cùng, nó kết hợp thông tin từ cả hai danh sách (PetList và AppointmentList) để hiển thị kết quả cuối cùng cho người dùng. Đây là điểm mà tất cả các đối tượng và chức năng nhỏ hợp tác (collaborate) để đạt được mục tiêu cuối cùng của ứng dụng.
 # Công nghệ sử dụng:
     Ngôn ngữ: Java
