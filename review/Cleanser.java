@@ -1,4 +1,5 @@
 import java.time.LocalDate;
+import java.time.format.DateTimeParseException;
 import java.util.*;
 
 public class Cleanser {
@@ -21,7 +22,15 @@ public class Cleanser {
             System.out.print("Chon chuc nang: ");
             luaChon = scanner.nextInt();
             scanner.nextLine(); 
-
+            try {
+                    luaChon = scanner.nextInt();
+                    scanner.nextLine(); // bỏ ký tự xuống dòng
+                } catch (InputMismatchException e) {
+                    System.err.println("Loi: Vui long nhap mot so nguyen cho lua chon cac chuc nang.");
+                    scanner.nextLine(); // Xóa input không hợp lệ để tránh vòng lặp vô hạn
+                    luaChon = -1; // Đặt giá trị không hợp lệ để lặp lại menu
+                    continue; // Quay lại đầu vòng lặp do-while
+                }
             switch (luaChon) {
                 case 1:
                     cleanser.hienThiLichKhamTrongNgay(LocalDate.now());
@@ -38,6 +47,14 @@ public class Cleanser {
                     LocalDate taiKham = LocalDate.parse(scanner.nextLine());
 
                     cleanser.capNhatTinhTrang(tenTC, tinhTrang, ghiChu, taiKham);
+                    try {
+                        taiKham = LocalDate.parse(scanner.nextLine());
+                        cleanser.capNhatTinhTrang(tenTC, tinhTrang, ghiChu, taiKham);
+                    } catch (DateTimeParseException e) {
+                        System.err.println("Loi: Dinh dang ngay khong hop le. Vui long nhap theo dinh dang yyyy-mm-dd.");
+                    } catch (Exception e) { // Bắt các lỗi khác có thể xảy ra trong capNhatTinhTrang
+                        System.err.println("Da xay ra loi khi cap nhap tinh trang thu cung: " + e.getMessage());
+                    }
                     break;
 
                 case 3:
@@ -49,6 +66,11 @@ public class Cleanser {
                     List<Double> gia = Arrays.asList(150_000.0, 250_000.0);
 
                     cleanser.inHoaDon(tenHoaDon, dichVu, gia);
+                    try {
+                        cleanser.inHoaDon(tenHoaDon, dichVu, gia);
+                    } catch (Exception e) {
+                        System.err.println("Da xay ra loi khi in hoa don: " + e.getMessage());
+                    }
                     break;
 
                 case 0:
@@ -65,17 +87,36 @@ public class Cleanser {
     }
 
     public void hienThiLichKhamTrongNgay(LocalDate ngayHienTai) {
-        System.out.println("Lich kham ngay " + ngayHienTai + ":");
-        boolean coLich = false;
-        for (Record hoSo : danhSachHoSo) {
-            if (hoSo.getDate().equals(ngayHienTai)) {
-                hoSo.display();
-                coLich = true;
+        try {
+            System.out.println("Lich kham ngay " + ngayHienTai + ":");
+            boolean coLich = false;
+            // Giả sử danhSachHoSo có thể null hoặc có lỗi khi truy cập
+            if (danhSachHoSo == null) {
+                throw new IllegalStateException("Danh sach ho tro chua duoc khoi tao.");
             }
+            if (danhSachHoSo.isEmpty()) {
+                System.out.println("Danh sach ho so rong.");
+            } else {
+                for (Record hoSo : danhSachHoSo) {
+                    if (hoSo == null) { // Xử lý trường hợp có null trong danh sách
+                        System.err.println("Canh bao: Co ho so rong trong danh sach, bo qua.");
+                        continue;
+                    }
+                    if (hoSo.getDate() != null && hoSo.getDate().equals(ngayHienTai)) {
+                        hoSo.display();
+                        coLich = true;
+                    }
+                }
+            }
+            if (!coLich) {
+                System.out.println("Khong co thu cung nao co lịch kham trong ngay.");
+            }
+        } catch (IllegalStateException e) {
+            System.err.println("Loi he thong: " + e.getMessage());
+        } catch (Exception e) {
+            System.err.println("Da xay ra loi khi hien thi lich kham: " + e.getMessage());
         }
-        if (!coLich) {
-            System.out.println("Khong co thu cung nao co lịch kham trong ngay.");
-        }
+      
     }
 
     public void capNhatTinhTrang(String tenThuCung, String tinhTrang, String ghiChu, LocalDate ngayTaiKham) {
@@ -118,6 +159,7 @@ public class Cleanser {
     }
 
     public void fakeData() {
+        try {
         Pet p1 = new Pet("Milu", "Nguyen Van A");
         Pet p2 = new Pet("Tom", "Le Thi B");
 
@@ -126,5 +168,9 @@ public class Cleanser {
 
         danhSachHoSo.add(r1);
         danhSachHoSo.add(r2);
+        System.out.println("Du lieu mau da duoc khoi tao thanh cong.");
+        } catch (Exception e) {
+            System.err.println("Loi khi tao du lieu mau: " + e.getMessage());
+        }
     }
 }
