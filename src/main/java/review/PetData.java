@@ -1,3 +1,4 @@
+package main.java.review;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -36,12 +37,12 @@ public class PetData {
     public static void main(String[] args) {
         Connection conn = null;
         try {
-            conn = DatabaseUtils.connectToDatabase();
+        /*    conn = DatabaseUtils.connectToDatabase();
             if (conn != null) {
                 retrievePetData(conn, LocalDate.now());
             } else {
                 System.err.println("Khong the ket noi toi co so du lieu.");
-            }
+            }*/
         } catch (Exception e) {
             System.err.println("Loi trong ham main: " + e.getMessage());
         } finally {

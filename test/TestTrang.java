@@ -1,6 +1,10 @@
 import java.time.LocalDate;
 import java.util.ArrayList;
 
+import main.java.review.AppointmentList;
+import main.java.review.Pet;
+import main.java.review.PetList;
+
 public class TestTrang {
     public static void main(String[] args) {
         Pet pet1 = new Pet(1, "Buddy", "Cho", "Nguyen Van A");

@@ -1,4 +1,4 @@
-package models;
+package review;
 
 public class Pet {
     private int id;
@@ -15,9 +15,32 @@ public class Pet {
             this.age = age;
             this.owner = owner;
         } catch (Exception e) {
-            System.err.println("Loi khi khoi tao Pet: " + e.getMessage());
-        } finally {
+            System.err.println("Lỗi khi khởi tạo Pet: " + e.getMessage());
         }
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getSpecies() {
+        return species;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public Owner getOwner() {
+        return owner;
+    }
+
+    public String getOwnerName() {
+        return (owner != null) ? owner.getName() : "Không có chủ";
     }
 
     public void updateInfo(String name, String species, int age) {
@@ -26,11 +49,11 @@ public class Pet {
             this.species = species;
             this.age = age;
         } catch (Exception e) {
-            System.err.println("Loi khi cap nhat thong tin thu cung: " + e.getMessage());
-        } finally {
+            System.err.println("Lỗi khi cập nhật thông tin thú cưng: " + e.getMessage());
         }
     }
 
+    @Override
     public String toString() {
         try {
             return "Pet{" +
@@ -38,12 +61,11 @@ public class Pet {
                     ", name='" + name + '\'' +
                     ", species='" + species + '\'' +
                     ", age=" + age +
-                    ", owner=" + (owner != null ? owner.getName() : "Khong co chu") +
+                    ", owner=" + getOwnerName() +
                     '}';
         } catch (Exception e) {
-            System.err.println("Loi khi chuyen Pet sang chuoi: " + e.getMessage());
-            return "Thong tin thu cung loi";
-        } finally {
+            System.err.println("Lỗi khi chuyển Pet sang chuỗi: " + e.getMessage());
+            return "Thông tin thú cưng lỗi";
         }
     }
 }

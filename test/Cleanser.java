@@ -1,6 +1,9 @@
 import java.time.LocalDate;
 import java.util.*;
 
+import main.java.review.Pet;
+import main.java.review.Record;
+
 public class Cleanser {
 
     private List<Record> danhSachHoSo = new ArrayList<>();

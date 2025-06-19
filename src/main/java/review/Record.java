@@ -1,4 +1,4 @@
-package models;
+package main.java.review;
 
 public class Record {
     private int recordID;
