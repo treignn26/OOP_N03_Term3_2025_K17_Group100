@@ -1,6 +1,6 @@
 package models;
     
-public class Pet{
+public class Pets{
     private int id;
     private String name;
     private String species;
