@@ -7,7 +7,7 @@ public class Cleanser {
 
     public static void main(String[] args) {
         Cleanser cleanser = new Cleanser();
-        cleanser.fakeData(); // tạo dữ liệu mẫu
+        cleanser.fakeData();
 
         Scanner scanner = new Scanner(System.in);
         int luaChon;
@@ -20,7 +20,7 @@ public class Cleanser {
             System.out.println("0. Thoat");
             System.out.print("Chon chuc nang: ");
             luaChon = scanner.nextInt();
-            scanner.nextLine(); // bỏ ký tự xuống dòng
+            scanner.nextLine(); 
 
             switch (luaChon) {
                 case 1:
