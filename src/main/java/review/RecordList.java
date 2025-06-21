@@ -1,4 +1,4 @@
-package main.java.review;
+package review;
 import java.util.ArrayList;
 
 public class RecordList {
@@ -11,11 +11,11 @@ public class RecordList {
 
     public ArrayList<Record> editRecord(int recordId, String visitDate, String treatment, String notes, int petId) {
         for (int i = 0; i < records.size(); i++) {
-            if (records.get(i).recordId == recordId) {
-                records.get(i).visitDate = visitDate;
-                records.get(i).treatment = treatment;
-                records.get(i).notes = notes;
-                records.get(i).petId = petId;
+            if (records.get(i).getRecordId() == recordId) {
+                records.get(i).setVisitDate(visitDate);
+                records.get(i).setTreatment(treatment);
+                records.get(i).setNotes(notes);
+                records.get(i).setPetId(petId);
                 System.out.println("Cap nhap thong tin thanh cong cho ho so ID: " + recordId);
             }
         }
@@ -24,9 +24,10 @@ public class RecordList {
 
     public ArrayList<Record> deleteRecord(int recordId) {
         for (int i = 0; i < records.size(); i++) {
-            if (records.get(i).recordId == recordId) {
+            if (records.get(i).getRecordId() == recordId) {
                 records.remove(i);
                 System.out.println("Da xoa ho so voi ID: " + recordId);
+                break;
             }
         }
         return records;
@@ -37,13 +38,12 @@ public class RecordList {
             System.out.println("Danh sach ho so trong.");
         } else {
             for (Record record : records) {
-                System.out.println("Record ID: " + record.recordId +
-                                   ", Visit Date: " + record.visitDate +
-                                   ", Treatment: " + record.treatment +
-                                   ", Notes: " + record.notes +
-                                   ", Pet ID: " + record.petId);
+                System.out.println("Record ID: " + record.getRecordId() +
+                                   ", Visit Date: " + record.getVisitDate() +
+                                   ", Treatment: " + record.getTreatment() +
+                                   ", Notes: " + record.getNotes() +
+                                   ", Pet ID: " + record.getPetId());
             }
         }
     }
 }
-

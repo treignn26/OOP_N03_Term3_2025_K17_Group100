@@ -1,4 +1,4 @@
-package main.java.review;
+package review;
 import review.Appointment;
 import java.util.ArrayList;
 import java.time.LocalDate;

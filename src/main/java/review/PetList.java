@@ -1,63 +1,38 @@
-package main.java.review;
-import java.util.ArrayList;
+package review;
 
-class Pet {
-    public int petId;
-    public String petFullname;
-}
+import java.util.ArrayList;
 
 public class PetList {
     ArrayList<Pet> pets = new ArrayList<Pet>();
 
     public ArrayList<Pet> addPet(Pet pet) {
-        try {
-            pets.add(pet);
-        } catch (Exception e) {
-            System.err.println("Loi khi them thu cung: " + e.getMessage());
-        } finally {
-        }
+        pets.add(pet);
         return pets;
     }
 
     public ArrayList<Pet> getEditPet(String petFullname, int petID) {
-        try {
-            for (int i = 0; i < pets.size(); i++) {
-                if (pets.get(i).petId == petID) {
-                    System.out.print("true");
-                    pets.get(i).petFullname = petFullname;
-                }
+        for (int i = 0; i < pets.size(); i++) {
+            if (pets.get(i).getId() == petID) {
+                Pet p = pets.get(i);
+                p.updateInfo(petFullname, p.getSpecies(), p.getAge());
             }
-        } catch (Exception e) {
-            System.err.println("Loi khi sua thu cung: " + e.getMessage());
-        } finally {
         }
         return pets;
     }
 
     public ArrayList<Pet> getDeletePet(int petID) {
-        try {
-            for (int i = 0; i < pets.size(); i++) {
-                if (pets.get(i).petId == petID) {
-                    pets.remove(i);
-                    break; 
-                }
+        for (int i = 0; i < pets.size(); i++) {
+            if (pets.get(i).getId() == petID) {
+                pets.remove(i);
+                break;
             }
-        } catch (Exception e) {
-            System.err.println("Loi khi xoa thu cung: " + e.getMessage());
-        } finally {
         }
         return pets;
     }
 
     public void printPetList() {
-        try {
-            int len = pets.size();
-            for (int i = 0; i < len; i++) {
-                System.out.println("Pet ID: " + pets.get(i).petId + " Pet Fullname: " + pets.get(i).petFullname);
-            }
-        } catch (Exception e) {
-            System.err.println("Loi khi in danh sach thu cung: " + e.getMessage());
-        } finally {
+        for (int i = 0; i < pets.size(); i++) {
+            System.out.println("Pet ID: " + pets.get(i).getId() + " Pet Fullname: " + pets.get(i).getName());
         }
     }
 }

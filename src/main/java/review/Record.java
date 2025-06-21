@@ -1,4 +1,4 @@
-package main.java.review;
+package review;
 
 public class Record {
     private int recordID;
@@ -9,33 +9,59 @@ public class Record {
     private String nextDoseDate;
 
     public Record(int recordID, int petID, String vaccineName, String date, String doctor, String nextDoseDate) {
-        try {
-            this.recordID = recordID;
-            this.petID = petID;
-            this.vaccineName = vaccineName;
-            this.date = date;
-            this.doctor = doctor;
-            this.nextDoseDate = nextDoseDate;
-        } catch (Exception e) {
-            System.err.println("Loi khi khoi tao Record: " + e.getMessage());
-        } finally {
-        }
+        this.recordID = recordID;
+        this.petID = petID;
+        this.vaccineName = vaccineName;
+        this.date = date;
+        this.doctor = doctor;
+        this.nextDoseDate = nextDoseDate;
     }
 
+    public int getRecordId() {
+        return recordID;
+    }
+
+    public String getVisitDate() {
+        return date;
+    }
+
+    public String getTreatment() {
+        return vaccineName;
+    }
+
+    public String getNotes() {
+        return doctor;
+    }
+
+    public int getPetId() {
+        return petID;
+    }
+
+    public void setVisitDate(String date) {
+        this.date = date;
+    }
+
+    public void setTreatment(String vaccineName) {
+        this.vaccineName = vaccineName;
+    }
+
+    public void setNotes(String doctor) {
+        this.doctor = doctor;
+    }
+
+    public void setPetId(int petID) {
+        this.petID = petID;
+    }
+
+    @Override
     public String toString() {
-        try {
-            return "Record{" +
-                    "recordID=" + recordID +
-                    ", petID=" + petID +
-                    ", vaccineName='" + vaccineName + '\'' +
-                    ", date='" + date + '\'' +
-                    ", doctor='" + doctor + '\'' +
-                    ", nextDoseDate='" + nextDoseDate + '\'' +
-                    '}';
-        } catch (Exception e) {
-            System.err.println("Loi khi chuyen Record sang chuoi: " + e.getMessage());
-            return "Record loi";
-        } finally {
-        }
+        return "Record{" +
+                "recordID=" + recordID +
+                ", petID=" + petID +
+                ", vaccineName='" + vaccineName + '\'' +
+                ", date='" + date + '\'' +
+                ", doctor='" + doctor + '\'' +
+                ", nextDoseDate='" + nextDoseDate + '\'' +
+                '}';
     }
 }
