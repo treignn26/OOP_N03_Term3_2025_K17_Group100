@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lich kham thu cung</title>
+</head>
+<body>
+    <h2>Danh sach thu cung can kham hom nay</h2>
+    <ul>
+        <li th:each="info : ${todayList}" th:text="${info}"></li>
+    </ul>
+</body>
+</html>

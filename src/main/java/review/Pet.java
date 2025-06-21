@@ -15,7 +15,7 @@ public class Pet {
             this.age = age;
             this.owner = owner;
         } catch (Exception e) {
-            System.err.println("Lỗi khi khởi tạo Pet: " + e.getMessage());
+            System.err.println("Loi khi khoi tao Pet: " + e.getMessage());
         }
     }
 
@@ -40,7 +40,7 @@ public class Pet {
     }
 
     public String getOwnerName() {
-        return (owner != null) ? owner.getName() : "Không có chủ";
+        return (owner != null) ? owner.getName() : "Khong co chu";
     }
 
     public void updateInfo(String name, String species, int age) {
@@ -49,7 +49,7 @@ public class Pet {
             this.species = species;
             this.age = age;
         } catch (Exception e) {
-            System.err.println("Lỗi khi cập nhật thông tin thú cưng: " + e.getMessage());
+            System.err.println("Loi khi cap nhap thong tin thu cung: " + e.getMessage());
         }
     }
 
@@ -64,8 +64,8 @@ public class Pet {
                     ", owner=" + getOwnerName() +
                     '}';
         } catch (Exception e) {
-            System.err.println("Lỗi khi chuyển Pet sang chuỗi: " + e.getMessage());
-            return "Thông tin thú cưng lỗi";
+            System.err.println("Loi khi chuyen Pet sang chuoi: " + e.getMessage());
+            return "Thong tin thu cung loi";
         }
     }
 }
