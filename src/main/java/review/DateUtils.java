@@ -1,7 +1,9 @@
-package main.java.review;
+package review;
+
 import java.time.LocalDate;
 
 public class DateUtils {
+
     public static LocalDate getCurrentDate() {
         return LocalDate.now();
     }
@@ -10,10 +12,10 @@ public class DateUtils {
         try {
             System.out.println("Today's date: " + getCurrentDate());
         } catch (Exception e) {
-            System.err.println("Da xay ra loi khi lay ngay hien tai: " + e.getMessage());
-            e.printStackTrace(); // Optional: hiển thị chi tiết lỗi
+            System.err.println("Da xay ra loi khi lay nay hien tai");
+            e.printStackTrace();
         } finally {
-            System.out.println("Ket thuc chuong trinh.");
+            System.out.println("Ket thuc chương trinh");
         }
     }
 }
