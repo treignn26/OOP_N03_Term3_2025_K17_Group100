@@ -1,4 +1,4 @@
-# Group 100 Project: Hệ thống quản lí thú cưng tại phòng khám thú y 
+# Group 100 Project: Hệ thống quản lí cửa hàng thú cưng
 
 # Member:
 
@@ -8,12 +8,12 @@
 
 	3.Trần Thảo Vy
 
-	4.Nguyễn Lệ Thu
 
 # Giới thiệu:
 ```
-    Đây là hệ thống phần mềm giúp quản lý thông tin thú cưng, chủ nuôi, hồ sơ khám bệnh và các hoạt động liên quan tại trạm thú y. 
-    Hệ thống hỗ trợ nhân viên thú y theo dõi lịch sử khám chữa bệnh, tiêm ngừa và tình trạng sức khỏe của thú cưng một cách dễ dàng và hiệu quả.
+   Hệ thống quản lý cửa hàng thú cưng là một phần mềm hỗ trợ chủ cửa hàng trong việc theo dõi và điều hành hoạt động kinh doanh như: quản lý thú cưng, sản phẩm, đơn hàng, khách hàng và dịch vụ chăm sóc. Hệ thống giúp tối ưu hoá quy trình làm việc, tiết kiệm thời gian và nâng cao hiệu quả phục vụ khách hàng.
+
+
 ```
 
 # Tính năng chính:
@@ -41,12 +41,6 @@
 
 -	Khi làm việc với dữ liệu trong bộ nhớ, dữ liệu cần được lưu trữ dưới dạng các Collection tùy chọn như ArrayList, LinkedList, Map,….
 
-
-#Sơ đồ Class Diagram:
-<img src="img/#2.png" alt="Sơ đồ Class Diagram">
-#Sơ đồ Behavioural Diagram:
-<img src="img/#3.png" alt="Sơ đồ Behavioural Diagram">
-=======
 
 ## Sơ đồ Class Diagram:
 <img src="images/sodoclassdiagram.jpg" alt="Sơ đồ Class Diagram" width="500"/>
