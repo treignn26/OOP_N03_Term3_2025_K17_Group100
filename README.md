@@ -10,11 +10,11 @@
 
 
 # Giới thiệu:
-```
+
    Hệ thống quản lý cửa hàng thú cưng là một phần mềm hỗ trợ chủ cửa hàng trong việc theo dõi và điều hành hoạt động kinh doanh như: quản lý thú cưng, sản phẩm, đơn hàng, khách hàng và dịch vụ chăm sóc. Hệ thống giúp tối ưu hoá quy trình làm việc, tiết kiệm thời gian và nâng cao hiệu quả phục vụ khách hàng.
 
 
-```
+
 
 # Tính năng chính:
 
