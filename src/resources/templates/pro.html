@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Quản lý Sản phẩm</title>
+</head>
+<body>
+<h2>Danh sách sản phẩm</h2>
+
+<table border="1">
+    <tr>
+        <th>Mã</th>
+        <th>Tên</th>
+        <th>Mô tả</th>
+        <th>Giá</th>
+        <th>Số lượng</th>
+        <th>Hành động</th>
+    </tr>
+    <tr th:each="p : ${products}">
+        <td th:text="${p.code}"></td>
+        <td th:text="${p.name}"></td>
+        <td th:text="${p.description}"></td>
+        <td th:text="${p.price}"></td>
+        <td th:text="${p.quantity}"></td>
+        <td>
+            <form method="post" th:action="@{/products/delete}">
+                <input type="hidden" name="code" th:value="${p.code}" />
+                <button type="submit">Xoá</button>
+            </form>
+        </td>
+    </tr>
+</table>
+
+<h3>Thêm sản phẩm mới</h3>
+<form method="post" th:action="@{/products/add}">
+    <input type="text" name="code" placeholder="Mã" required />
+    <input type="text" name="name" placeholder="Tên" required />
+    <input type="text" name="description" placeholder="Mô tả" />
+    <input type="number" name="price" step="0.01" placeholder="Giá" />
+    <input type="number" name="quantity" placeholder="Số lượng" />
+    <button type="submit">Thêm</button>
+</form>
+
+</body>
+</html>
