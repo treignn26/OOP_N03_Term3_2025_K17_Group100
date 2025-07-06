@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Quản lý Nhân viên</title>
+</head>
+<body>
+    <h1>Danh sách nhân viên</h1>
+
+    <form method="post" action="/employees/add">
+        <input name="code" placeholder="Mã nhân viên" required>
+        <input name="name" placeholder="Tên nhân viên">
+        <input name="phone" placeholder="SĐT">
+        <input name="email" placeholder="Email">
+        <input name="role" placeholder="Vai trò">
+        <button>Thêm</button>
+    </form>
+
+    <ul>
+        <li th:each="e : ${employees}">
+            <b th:text="${e.code}">MNV001</b> -
+            <span th:text="${e.name}">Tên</span> |
+            <span th:text="${e.phone}">SĐT</span> |
+            <span th:text="${e.email}">Email</span> |
+            <span th:text="${e.role}">Vai trò</span>
+
+            <form method="post" th:action="@{/employees/rename}" style="display:inline;">
+                <input type="hidden" name="code" th:value="${e.code}">
+                <input name="newName" placeholder="Tên mới">
+                <button>Đổi tên</button>
+            </form>
+
+            <form method="post" th:action="@{/employees/delete}" style="display:inline;">
+                <input type="hidden" name="code" th:value="${e.code}">
+                <button>Xoá</button>
+            </form>
+        </li>
+    </ul>
+</body>
+</html>
