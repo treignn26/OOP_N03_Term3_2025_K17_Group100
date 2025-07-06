@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản lý Dịch vụ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 8px 12px;
+            border: 1px solid #ccc;
+        }
+        form {
+            margin-top: 20px;
+        }
+        input[type="text"], input[type="number"] {
+            padding: 5px;
+            margin-right: 10px;
+        }
+        button {
+            padding: 5px 10px;
+        }
+        h1 {
+            color: #336699;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Quản lý Dịch vụ</h1>
+
+<!-- Bảng hiển thị danh sách dịch vụ -->
+<table>
+    <thead>
+        <tr>
+            <th>Mã</th>
+            <th>Tên dịch vụ</th>
+            <th>Giá</th>
+            <th>Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="s : ${services}">
+            <td th:text="${s.code}"></td>
+            <td th:text="${s.name}"></td>
+            <td th:text="${s.price}"></td>
+            <td>
+                <form th:action="@{/services/rename}" method="post" style="display:inline;">
+                    <input type="hidden" name="code" th:value="${s.code}" />
+                    <input type="text" name="newName" placeholder="Tên mới" required />
+                    <button type="submit">Đổi tên</button>
+                </form>
+
+                <form th:action="@{/services/delete}" method="post" style="display:inline;">
+                    <input type="hidden" name="code" th:value="${s.code}" />
+                    <button type="submit" onclick="return confirm('Bạn có chắc muốn xoá?')">Xoá</button>
+                </form>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- Biểu mẫu thêm mới dịch vụ -->
+<h2>Thêm dịch vụ mới</h2>
+<form th:action="@{/services/add}" method="post">
+    <input type="text" name="code" placeholder="Mã dịch vụ" required />
+    <input type="text" name="name" placeholder="Tên dịch vụ" required />
+    <input type="number" name="price" step="0.01" placeholder="Giá" required />
+    <button type="submit">Thêm</button>
+</form>
+
+</body>
+</html>
