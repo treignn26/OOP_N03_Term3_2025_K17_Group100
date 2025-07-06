@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Pet Shop Menu</title>
+    <meta charset="UTF-8" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 50px;
+      }
+      .menu {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: 300px;
+        margin: 0 auto;
+      }
+      a {
+        padding: 12px 20px;
+        background-color: #56285d;
+        color: white;
+        text-decoration: none;
+        border-radius: 8px;
+        font-size: 18px;
+      }
+      a:hover {
+        background-color: #56285d;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>🌟 Chọn chức năng quản lý</h1>
+    <div class="menu">
+      <a th:href="@{/pets}">🐶 Quản lý Thú cưng</a>
+      <a th:href="@{/customers}">👤 Quản lý Khách hàng</a>
+      <a th:href="@{/products}">📦 Quản lý Sản phẩm</a>
+      <a th:href="@{/invoices}">🧾 Quản lý Hóa đơn</a>
+      <a th:href="@{/histories}">📚 Quản lý Lịch sử mua hàng</a>
+    </div>
+  </body>
+</html>
