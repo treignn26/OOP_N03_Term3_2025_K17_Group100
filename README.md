@@ -60,7 +60,13 @@ Thuộc tính:
 	+ price (giá sản phẩm)
 	+ description (thông tin sản phẩm)
 	+ quantity (số lượng sản phẩm)
-
+4. Dịch vụ
+	+ Lưu trữ thông tin các dịch vụ cung cấp cho khách hàng tiêu dùng, bao gồm: mã dịch vụ, tên dịch vụ, loại dịch vụ, giá dịch vụ
+Thuộc tính:
+	+ dvuid (mã dịch vụ)
+	+ name (tên dịch vụ)
+	+ type (loại dịch vụ)
+	+ price (giá dịch vụ)
 
 
 ## Sơ đồ Class Diagram:
