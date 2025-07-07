@@ -35,6 +35,7 @@
 
 -	Khi làm việc với dữ liệu trong bộ nhớ, dữ liệu cần được lưu trữ dưới dạng các Collection tùy chọn như ArrayList, LinkedList, Map,….
 # Các đối tượng trong hệ thống:
+
 1. Thú cưng(Pet)
 	+ Lưu trữ thông tin của thú cưng, bao gồm: mã ID thú cưng(duy nhất), tên thú cưng, giống loài, giới tính, tuổi(tháng), giá bán.
 Thuộc tính: 
@@ -44,6 +45,7 @@ Thuộc tính:
 	+ Gender (Giới tính)
 	+ Age (Tuổi/Tháng)
 	+ Price (Giá)
+
 2. Khách hàng (Customer)
 	+ Lưu trữ thông tin của khách hàng, bao gồm: mã khách hàng, tên khách hàng, số điện thoại, email, địa chỉ
 Thuộc tính:
@@ -52,6 +54,7 @@ Thuộc tính:
 	+ email (email của khách hàng)
 	+ phone (Số điện thoại khách hàng)
 	+ address (Địa chỉ khách hàng)
+
 3. Sản phẩm (Product)
 	+ Lưu trữ thông tin của sản phẩm, bao gồm: mã sản phẩm, tên sản phẩm, giá sản phẩm, thông tin sản phẩm, số lượng sản phẩm
 Thuộc tính:
@@ -60,6 +63,7 @@ Thuộc tính:
 	+ price (giá sản phẩm)
 	+ description (thông tin sản phẩm)
 	+ quantity (số lượng sản phẩm)
+
 4. Dịch vụ
 	+ Lưu trữ thông tin các dịch vụ cung cấp cho khách hàng tiêu dùng, bao gồm: mã dịch vụ, tên dịch vụ, loại dịch vụ, giá dịch vụ
 Thuộc tính:
@@ -67,6 +71,7 @@ Thuộc tính:
 	+ name (tên dịch vụ)
 	+ type (loại dịch vụ)
 	+ price (giá dịch vụ)
+
 5. Nhân viên (Employee)
 	+ Lưu trữ thông tin của nhân viên, bao gồm: mã nhân viên, tên nhân viên, số điện thoại, email, vai trò
 Thuộc tính: 
