@@ -67,7 +67,14 @@ Thuộc tính:
 	+ name (tên dịch vụ)
 	+ type (loại dịch vụ)
 	+ price (giá dịch vụ)
-
+5. Nhân viên (Employee)
+	+ Lưu trữ thông tin của nhân viên, bao gồm: mã nhân viên, tên nhân viên, số điện thoại, email, vai trò
+Thuộc tính: 
+	+ nvid (mã nhân viên)
+	+ name (tên nhân viên)
+	+ phone (số điện thoại nhân viên)
+	+ email
+	+ role (vai trò nhân viên)
 
 ## Sơ đồ Class Diagram:
 <img src="images/sodoclassdiagram.jpg" alt="Sơ đồ Class Diagram" width="500"/>
