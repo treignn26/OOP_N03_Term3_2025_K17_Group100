@@ -52,6 +52,14 @@ Thuộc tính:
 	+ email (email của khách hàng)
 	+ phone (Số điện thoại khách hàng)
 	+ address (Địa chỉ khách hàng)
+3. Sản phẩm (Product)
+	+ Lưu trữ thông tin của sản phẩm, bao gồm: mã sản phẩm, tên sản phẩm, giá sản phẩm, thông tin sản phẩm, số lượng sản phẩm
+Thuộc tính:
+	+ productid (mã sản phẩm)
+	+ name (tên sản phẩm)
+	+ price (giá sản phẩm)
+	+ description (thông tin sản phẩm)
+	+ quantity (số lượng sản phẩm)
 
 
 
